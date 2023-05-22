@@ -6,9 +6,9 @@
 [node name="Game" type="Node2D"]
 
 [node name="KnifeShooter" parent="." instance=ExtResource("1_npil1")]
-position = Vector2(342, 841)
+position = Vector2(0, 400)
 
 [node name="Target" parent="." instance=ExtResource("2_vad3u")]
-position = Vector2(360, 395)
+position = Vector2(0, -150)
 
-[node name="Camera2D" type="Camera2D" parent="Target"]
+[node name="Camera2D" type="Camera2D" parent="."]
