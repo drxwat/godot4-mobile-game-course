@@ -14,6 +14,10 @@ config/name="godot4-mobile-game-course"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://assets/target5.png"
 
+[autoload]
+
+Globals="*res://core/globals.gd"
+
 [display]
 
 window/size/viewport_width=720
