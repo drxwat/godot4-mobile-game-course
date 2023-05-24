@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Target
 
+const EXPLOSION_TIME := 1.0
 const GENERATION_LIMIT := 10
 const KNIFE_POSITION = Vector2(0, 180)
 const APLLE_POSITION = Vector2(0, 176)
@@ -12,12 +13,35 @@ var apple_scene : PackedScene = load("res://elements/apple/apple.tscn")
 var speed := PI
 
 @onready var items_container := $ItemsContainer
+@onready var sprite := $Sprite2D
+@onready var knife_particles := $KnifeParticles2D
+@onready var particles_target_parts := [
+	$TargetParticles2D,
+	$TargetParticles2D2,
+	$TargetParticles2D3
+]
 
 func _ready():
 	add_default_items(3, 2)
 
 func _physics_process(delta: float):
 	rotation += speed * delta
+	
+func explode():
+	sprite.hide()
+	items_container.hide()
+	
+	var tween := create_tween()
+	
+	for target_particles_part in particles_target_parts:
+		tween.parallel().tween_property(target_particles_part, "modulate", Color("ffffff00"), EXPLOSION_TIME)
+		target_particles_part.emitting = true
+		
+	knife_particles.rotation = -rotation
+	knife_particles.emitting = true
+	tween.parallel().tween_property(knife_particles, "modulate", Color("ffffff00"), EXPLOSION_TIME)
+	
+	tween.play()
 
 func add_object_with_pivot(object: Node2D, object_rotation: float):
 	var pivot := Node2D.new()
