@@ -39,6 +39,11 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "< HOME"
+flat = true
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
