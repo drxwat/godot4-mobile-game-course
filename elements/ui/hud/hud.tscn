@@ -44,65 +44,67 @@ mouse_filter = 2
 layout_mode = 2
 
 [node name="HomeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "< HOME"
 flat = true
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-visible = false
+[node name="PointsLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "10"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-visible = false
+[node name="StageCounter" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StageCounter"]
 layout_mode = 2
 texture = ExtResource("2_xf8ip")
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StageCounter"]
 layout_mode = 2
 texture = ExtResource("2_xf8ip")
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StageCounter"]
 layout_mode = 2
 texture = ExtResource("2_xf8ip")
 stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StageCounter"]
 layout_mode = 2
 texture = ExtResource("2_xf8ip")
 stretch_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/StageCounter"]
 layout_mode = 2
 texture = ExtResource("3_owcdr")
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ApllesCounter" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ApllesCounter"]
 layout_mode = 2
 text = "100"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/ApllesCounter"]
 custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
 texture = ExtResource("4_hd1ds")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-visible = false
+[node name="StageLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "STAGE 10"
 horizontal_alignment = 1
@@ -112,44 +114,44 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-visible = false
+[node name="KnivesCounter" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
 

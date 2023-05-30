@@ -19,6 +19,7 @@ config/icon="res://assets/target5.png"
 
 Events="*res://core/events.gd"
 Globals="*res://core/globals.gd"
+Hud="*res://elements/ui/hud/hud.tscn"
 
 [display]
 
