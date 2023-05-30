@@ -19,3 +19,4 @@ position = Vector2(360, 392)
 position = Vector2(360, 540)
 
 [node name="RestartOverlay" parent="." instance=ExtResource("4_j8h56")]
+visible = false

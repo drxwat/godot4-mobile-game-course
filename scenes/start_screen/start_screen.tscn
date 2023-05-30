@@ -1,16 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba2mrqnnbtow7"]
 
+[ext_resource type="Script" path="res://scenes/start_screen/start_screen.gd" id="1_njy24"]
 [ext_resource type="PackedScene" uid="uid://b1dtn7e5h5bel" path="res://elements/ui/hud/hud.tscn" id="1_ykucm"]
 [ext_resource type="Texture2D" uid="uid://cso6wdxm7tlg8" path="res://assets/knife1.png" id="2_4kw5p"]
-[ext_resource type="Texture2D" uid="uid://bgprykrgnb87w" path="res://assets/button1.png" id="3_5ympu"]
+[ext_resource type="StyleBox" uid="uid://o2hqrr8inaje" path="res://styles/button.stylebox" id="3_fuh1x"]
 [ext_resource type="Texture2D" uid="uid://dl8yjyw3eu6tm" path="res://assets/gift-ico.png" id="4_nmny4"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2c541"]
-texture = ExtResource("3_5ympu")
-texture_margin_left = 45.7756
-texture_margin_top = 33.1225
-texture_margin_right = 54.7144
-texture_margin_bottom = 36.6123
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -19,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_njy24")
 
 [node name="HUD" parent="." instance=ExtResource("1_ykucm")]
 
@@ -67,7 +62,10 @@ theme_override_colors/font_color = Color(0.615686, 0.301961, 0.682353, 1)
 theme_override_colors/font_pressed_color = Color(0.615686, 0.301961, 0.682353, 1)
 theme_override_colors/font_hover_color = Color(0.615686, 0.301961, 0.682353, 1)
 theme_override_colors/font_focus_color = Color(0.615686, 0.301961, 0.682353, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_2c541")
+theme_override_styles/normal = ExtResource("3_fuh1x")
+theme_override_styles/hover = ExtResource("3_fuh1x")
+theme_override_styles/pressed = ExtResource("3_fuh1x")
+theme_override_styles/focus = ExtResource("3_fuh1x")
 text = "PLAY"
 
 [node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
@@ -78,3 +76,6 @@ size_flags_vertical = 3
 layout_mode = 2
 texture_normal = ExtResource("4_nmny4")
 stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer3/TextureButton" to="." method="_on_texture_button_pressed"]

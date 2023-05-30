@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1dtn7e5h5bel"]
+[gd_scene load_steps=7 format=3 uid="uid://b1dtn7e5h5bel"]
 
 [ext_resource type="Texture2D" uid="uid://cxc0eg6ywmqi5" path="res://assets/background.png" id="1_j766r"]
+[ext_resource type="Script" path="res://elements/ui/hud/hud.gd" id="1_pl4up"]
 [ext_resource type="Texture2D" uid="uid://c8avdj5qs1klg" path="res://assets/circle_1.png" id="2_xf8ip"]
 [ext_resource type="Texture2D" uid="uid://fj11q3al6t66" path="res://assets/boss_ico.png" id="3_owcdr"]
 [ext_resource type="Texture2D" uid="uid://dfoxeyqgynyxa" path="res://assets/apple_ico.png" id="4_hd1ds"]
@@ -8,6 +9,7 @@
 
 [node name="HUD" type="CanvasLayer"]
 layer = 5
+script = ExtResource("1_pl4up")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -28,6 +30,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 50
@@ -35,11 +38,12 @@ theme_override_constants/margin_bottom = 35
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HomeButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "< HOME"
 flat = true
@@ -106,6 +110,7 @@ horizontal_alignment = 1
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 visible = false
@@ -147,3 +152,5 @@ texture = ExtResource("5_kdfru")
 [node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_kdfru")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
