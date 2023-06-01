@@ -11,8 +11,13 @@ func create_new_knife():
 	add_child(knife)
 
 func _input(event: InputEvent):
-	if is_enabled and event is InputEventScreenTouch and event.is_pressed() and timer.time_left <= 0:
+	if Globals.knives > 0 and \
+	is_enabled and \
+	event is InputEventScreenTouch and \
+	event.is_pressed() and \
+	timer.time_left <= 0:
 		knife.throw()
+		Globals.remove_knife()
 		timer.start()
 
 

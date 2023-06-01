@@ -9,12 +9,17 @@ const location_to_scene = {
 var rng := RandomNumberGenerator.new()
 
 var points := 0
+var knives := 6
 
 func _ready():
 	rng.randomize()
 	print_debug(rng.seed)
 	
 	Events.location_changed.connect(handle_location_change)
+
+func remove_knife():
+	knives -= 1
+	Events.knived_changed.emit(knives)
 
 func add_point():
 	points += 1

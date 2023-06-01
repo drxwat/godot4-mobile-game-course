@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c8avdj5qs1klg" path="res://assets/circle_1.png" id="2_xf8ip"]
 [ext_resource type="Texture2D" uid="uid://fj11q3al6t66" path="res://assets/boss_ico.png" id="3_owcdr"]
 [ext_resource type="Texture2D" uid="uid://dfoxeyqgynyxa" path="res://assets/apple_ico.png" id="4_hd1ds"]
-[ext_resource type="Texture2D" uid="uid://c5jx2g5jh4i36" path="res://assets/knife_ico_2.png" id="5_kdfru"]
+[ext_resource type="PackedScene" uid="uid://cqd3ditnkdhvl" path="res://elements/ui/hud/knives_counter/knives_counter.tscn" id="6_m4sm7"]
 
 [node name="HUD" type="CanvasLayer"]
 layer = 5
@@ -114,45 +114,8 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="KnivesCounter" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="KnivesCounter" parent="MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("6_m4sm7")]
 unique_name_in_owner = true
 layout_mode = 2
-alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
-
-[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2/KnivesCounter"]
-layout_mode = 2
-texture = ExtResource("5_kdfru")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HomeButton" to="." method="_on_home_button_pressed"]
