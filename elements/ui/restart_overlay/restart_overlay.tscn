@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnao8xffyywot"]
+[gd_scene load_steps=8 format=3 uid="uid://dnao8xffyywot"]
 
 [ext_resource type="Texture2D" uid="uid://croxd6vnu7m5d" path="res://assets/banner.png" id="1_av2i3"]
 [ext_resource type="Texture2D" uid="uid://cxc0eg6ywmqi5" path="res://assets/background.png" id="1_gp7sv"]
+[ext_resource type="Script" path="res://elements/ui/restart_overlay/restart_overlay.gd" id="1_jr7hf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s57ap"]
 content_margin_top = 20.0
@@ -154,6 +155,7 @@ _data = {
 
 [node name="RestartOverlay" type="CanvasLayer"]
 layer = 4
+script = ExtResource("1_jr7hf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -224,3 +226,5 @@ autoplay = "show_overlay"
 libraries = {
 "": SubResource("AnimationLibrary_sg561")
 }
+
+[connection signal="pressed" from="MarginContainer/Control/Button" to="." method="_on_button_pressed"]

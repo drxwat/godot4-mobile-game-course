@@ -39,6 +39,7 @@ func handle_collision(collision: KinematicCollision2D):
 		change_state(State.IDLE)
 	else:
 		throw_away(collision.get_normal())
+		Events.game_over.emit()
 
 func add_knife_to_target(target: Target):
 	get_parent().remove_child(self)
