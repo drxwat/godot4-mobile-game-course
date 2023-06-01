@@ -11,6 +11,7 @@ func _ready():
 	Events.location_changed.connect(update_hud_location)
 	Events.points_changed.connect(update_points)
 	Events.apples_changed.connect(update_apples)
+	update_apples(Globals.apples)
 	update_hud_location(Events.LOCATIONS.START)
 
 func _on_home_button_pressed():
