@@ -86,18 +86,18 @@ layout_mode = 2
 texture = ExtResource("3_owcdr")
 stretch_mode = 5
 
-[node name="ApllesCounter" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ApplesCounter" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ApllesCounter"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ApplesCounter"]
 layout_mode = 2
-text = "100"
+text = "0"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/ApllesCounter"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/ApplesCounter"]
 custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
 texture = ExtResource("4_hd1ds")
