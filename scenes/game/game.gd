@@ -10,6 +10,7 @@ func _ready():
 func end_game():
 	knife_shooter.is_enabled = false
 	show_restart_overlay()
+	Globals.reset_points()
 
 func show_restart_overlay():
 	add_child(restart_overlya_scene.instantiate())
