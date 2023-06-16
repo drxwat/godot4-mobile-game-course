@@ -1,5 +1,19 @@
 extends Node
 
+const KNIFE_TEXTURES := [
+	preload("res://assets/knife1.png"),
+	preload("res://assets/knife2.png"),
+	preload("res://assets/knife3.png"),
+	preload("res://assets/knife4.png"),
+	preload("res://assets/knife5.png"),
+	preload("res://assets/knife6.png"),
+	preload("res://assets/knife7.png"),
+	preload("res://assets/knife8.png"),
+	preload("res://assets/knife9.png"),
+]
+
+const UNLOCK_COST := 250
+
 const location_to_scene = {
 	Events.LOCATIONS.GAME: preload("res://scenes/game/game.tscn"),
 	Events.LOCATIONS.START: preload("res://scenes/start_screen/start_screen.tscn"),
@@ -27,6 +41,7 @@ var unlocked_knives := 0b000000001
 func _ready():
 	load_game()
 	rng.randomize()
+	seed(rng.seed)
 	print_debug(rng.seed)
 	
 	Events.location_changed.connect(handle_location_change)

@@ -11,6 +11,10 @@ var fly_away_speed := 1000.0
 var fly_away_rotation_speed := 1500.0
 var fly_away_deviation := PI / 4.0
 
+@onready var sprite := $Sprite2D
+
+func _ready():
+	sprite.texture = Globals.KNIFE_TEXTURES[Globals.active_knife_index]
 
 func _physics_process(delta: float):
 	match state:

@@ -21,7 +21,13 @@ var speed := PI
 	$TargetParticles2D3
 ]
 
+func _ready():
+	knife_particles.texture = Globals.KNIFE_TEXTURES[Globals.active_knife_index]
+
 func _physics_process(delta: float):
+	move(delta)
+	
+func move(delta: float):
 	rotation += speed * delta
 	
 func take_damage():

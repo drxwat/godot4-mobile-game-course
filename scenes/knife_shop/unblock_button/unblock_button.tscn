@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2ftq4gjob5ok"]
+[gd_scene load_steps=6 format=3 uid="uid://d2ftq4gjob5ok"]
 
 [ext_resource type="Texture2D" uid="uid://c076ottpxnfh4" path="res://assets/button2.png" id="1_amaly"]
 [ext_resource type="Texture2D" uid="uid://v7i8pj2qj2no" path="res://assets/knife_ico_1.png" id="2_8opul"]
+[ext_resource type="Script" path="res://scenes/knife_shop/unblock_button/unblock_button.gd" id="2_xwthl"]
 [ext_resource type="Texture2D" uid="uid://dfoxeyqgynyxa" path="res://assets/apple_ico.png" id="3_edjt5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p84ff"]
@@ -17,6 +18,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_p84ff")
+script = ExtResource("2_xwthl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -56,3 +58,9 @@ stretch_mode = 5
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "250"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
