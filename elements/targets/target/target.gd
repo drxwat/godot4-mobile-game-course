@@ -33,8 +33,11 @@ func move(delta: float):
 func take_damage():
 	if Globals.knives == 0:
 		explode()
+	else:
+		SfxPlayer.play_track(SfxPlayer.AUDIO_TRACKS.WoodHit)
 	
 func explode():
+	SfxPlayer.play_track(SfxPlayer.AUDIO_TRACKS.TargetExplosion)
 	sprite.hide()
 	items_container.hide()
 	

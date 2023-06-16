@@ -18,6 +18,7 @@ config/icon="res://assets/target5.png"
 [autoload]
 
 Events="*res://core/events.gd"
+SfxPlayer="*res://elements/sfx_player/sfx_player.tscn"
 Globals="*res://core/globals.gd"
 Hud="*res://elements/ui/hud/hud.tscn"
 
