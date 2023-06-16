@@ -11,6 +11,7 @@ var fly_away_speed := 1000.0
 var fly_away_rotation_speed := 1500.0
 var fly_away_deviation := PI / 4.0
 
+
 func _physics_process(delta: float):
 	match state:
 		State.FLY_TO_TARGET:

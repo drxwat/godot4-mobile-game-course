@@ -7,7 +7,7 @@ const location_to_scene = {
 }
 
 const SAVE_GAME_FILE := "user://savegame.save"
-const SAVE_VARIABLES := ["apples"]
+const SAVE_VARIABLES := ["apples", "active_knife_index", "unlocked_knives"]
 
 const MAX_STAGE_APPLES := 3
 const MAX_STAGE_KNIVES := 2
@@ -21,12 +21,25 @@ var points := 0
 var knives := 0
 var apples := 0
 
+var active_knife_index := 0
+var unlocked_knives := 0b000000001
+
 func _ready():
 	load_game()
 	rng.randomize()
 	print_debug(rng.seed)
 	
 	Events.location_changed.connect(handle_location_change)
+
+func unlock_knife(knife_index: int):
+	unlocked_knives |= (1 << knife_index)
+	
+func is_knife_unlocked(knife_index: int) -> bool:
+	return unlocked_knives & (1 << knife_index) != 0
+
+func change_knife(knife_index: int):
+	active_knife_index = knife_index
+	Events.active_knife_changed.emit(active_knife_index)
 
 func save_game():
 	var save_game_file = FileAccess.open(SAVE_GAME_FILE, FileAccess.WRITE)
